@@ -136,12 +136,12 @@ public class DoublyLinkedList<T> {
 		
 		/**
 		 * Output:
-		 * 1 -> 2 -> 3
-		 * 3 -> 4 -> 5 -> 6 -> 7
+		 * 1 <-> 2 <-> 3
+		 * 3 <-> 4 <-> 5 <-> 6 <-> 7
 		 * false
 		 * true
 		 * true
-		 * 4 -> 5 -> 7
+		 * 4 <-> 5 <-> 7
 		 */
 	}
 }
