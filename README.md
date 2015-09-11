@@ -13,7 +13,7 @@ Access: O(n) Insertion: O(1) Deletion O(1)
 
 ### Stack & Queue
 * [Stack](https://github.com/seokhoonlee/data-structures/blob/master/stack-and-queue/Stack.java)
-* [Queue](http://google.com)
+* [Queue](https://github.com/seokhoonlee/data-structures/blob/master/stack-and-queue/Queue.java)
 ```
 Access: O(n) Insertion: O(1) Deletion O(1)
 ```
