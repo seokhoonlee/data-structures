@@ -1,10 +1,12 @@
-public class SinglyLinkedList<T> {
+public class DoublyLinkedList<T> {
 	public static class Node<T> {
 		public T value;
+		public Node<T> prev;
 		public Node<T> next;
 
 		public Node(T value){
 			this.value = value;
+			this.prev = null;
 			this.next = null;
 		}
 	}
@@ -13,7 +15,7 @@ public class SinglyLinkedList<T> {
 	public Node<T> tail;
 	public int length;
 
-	public SinglyLinkedList() {
+	public DoublyLinkedList() {
 		head = null;
 		tail = null;
 		length = 0;
@@ -32,6 +34,7 @@ public class SinglyLinkedList<T> {
 			
 		} else {
 			tail.next = inputNode;
+			inputNode.prev = tail;
 			tail = inputNode;
 		}
 		
@@ -113,7 +116,7 @@ public class SinglyLinkedList<T> {
 	}
 
 	public static void main(String[] args){
-		SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+		DoublyLinkedList<String> list = new DoublyLinkedList<String>();
 
 		list.add("1");
 		list.add("2");
