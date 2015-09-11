@@ -48,11 +48,11 @@ public class Stack<T> {
 	 * @return value of the top node.
 	 */
 	public T pop() {
-		T temp = top.value;
-
 		if (top == null) {
 			return null;
 		}
+
+		T temp = top.value;
 
 		if (top.down != null) {
 			top = top.down;

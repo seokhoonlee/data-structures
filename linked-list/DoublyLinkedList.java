@@ -76,7 +76,7 @@ public class DoublyLinkedList<T> {
 	 * @return true if exists, false if doesn't exist.
 	 */
 	public boolean removeAt(int index) {
-		if (index > length) {
+		if (index > length || length == 0) {
 			return false;
 		}
 		
