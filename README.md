@@ -1,6 +1,6 @@
 # data-structures
 
-Below are some of the well known data structures and their Java implementation. Simply click on each highlighted item to view the code. 
+Below are some of the well known data structures and their Java implementation. Simply click on each highlighted item to view the code and explanations. 
 
 ## List of data structures
 
@@ -29,7 +29,7 @@ Access: O(Log(n)) Search: O(Log(n)) Insertion: O(Log(n)) Deletion O(Log(n))
 * [Binary Search Tree](http://google.com)
 * [AVL Tree](http://google.com)
 ```
-Access: O(h) Search: O(h) Insertion: O(h) Deletion O(h), h = Log(n) is balanced
+Access: O(h) Search: O(h) Insertion: O(h) Deletion O(h), h = Log(n) if balanced
 ```
 
 ### Hash Table
