@@ -87,7 +87,7 @@ public class SinglyLinkedList<T> {
 		} else {
 			Node<T> curr = head;
 			
-			curr = getNodeAt(index = 1);
+			curr = getNodeAt(index - 1);
 			curr.next = curr.next.next;
 		}
 		
@@ -138,7 +138,7 @@ public class SinglyLinkedList<T> {
 		 * false
 		 * true
 		 * true
-		 * 4 -> 6 -> 7
+		 * 4 -> 5 -> 7
 		 */
 	}
 }
