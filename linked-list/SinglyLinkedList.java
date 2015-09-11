@@ -1,16 +1,16 @@
-public class SinglyLinkedList<TL> {
-	public static class Node<TN> {
-		public TN value;
-		public Node<TN> next;
+public class SinglyLinkedList<T> {
+	public static class Node<T> {
+		public T value;
+		public Node<T> next;
 
-		public Node(TN value){
+		public Node(T value){
 			this.value = value;
 			this.next = null;
 		}
 	}
 	
-	public Node<TL> head;
-	public Node<TL> tail;
+	public Node<T> head;
+	public Node<T> tail;
 	int length;
 
 	public SinglyLinkedList() {
@@ -23,8 +23,8 @@ public class SinglyLinkedList<TL> {
 	 * Add input node to the list.
 	 * @param input node (!= null).
 	 */
-	public void add(TL inputValue) {
-		Node<TL> inputNode = new Node<TL>(inputValue);
+	public void add(T inputValue) {
+		Node<T> inputNode = new Node<T>(inputValue);
 		
 		if (head == null) {
 			head = inputNode;
@@ -52,8 +52,8 @@ public class SinglyLinkedList<TL> {
 	 * @param index (starting from 0).
 	 * @return node if exists, null if doesn't exist.
 	 */
-	private Node<TL> getNodeAt(int index) {
-		Node<TL> curr = head;
+	private Node<T> getNodeAt(int index) {
+		Node<T> curr = head;
 		
 		for (int i = 0; i < index; i++) {
 			if (curr != null) {
@@ -83,7 +83,7 @@ public class SinglyLinkedList<TL> {
 			tail.next = null;
 			
 		} else {
-			Node<TL> curr = head;
+			Node<T> curr = head;
 			
 			curr = getNodeAt(index = 1);
 			curr.next = curr.next.next;
@@ -97,7 +97,7 @@ public class SinglyLinkedList<TL> {
 	 * Print list in order from head to tail.
 	 */
 	public void print() {
-		Node<?> curr = head;
+		Node<T> curr = head;
 		
 		while (curr != null) {
 			System.out.print(curr.value);
