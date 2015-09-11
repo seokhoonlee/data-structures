@@ -1,0 +1,142 @@
+public class SinglyLinkedList<TL> {
+	public static class Node<TN> {
+		public TN value;
+		public Node<TN> next;
+
+		public Node(TN value){
+			this.value = value;
+			this.next = null;
+		}
+	}
+	
+	public Node<TL> head;
+	public Node<TL> tail;
+	int length;
+
+	public SinglyLinkedList() {
+		head = null;
+		tail = null;
+		length = 0;
+	}
+	
+	/**  
+	 * Add input node to the list.
+	 * @param input node (!= null).
+	 */
+	public void add(TL inputValue) {
+		Node<TL> inputNode = new Node<TL>(inputValue);
+		
+		if (head == null) {
+			head = inputNode;
+			tail = inputNode;
+			
+		} else {
+			tail.next = inputNode;
+			tail = inputNode;
+		}
+		
+		length++;
+	}
+
+	/**  
+	 * Clear all the contents in the list.
+	 */
+	public void clear() {
+		head = null;
+		tail = null;
+		length = 0;
+	}
+	
+	/**  
+	 * Get element at index.
+	 * @param index (starting from 0).
+	 * @return node if exists, null if doesn't exist.
+	 */
+	private Node<TL> getNodeAt(int index) {
+		Node<TL> curr = head;
+		
+		for (int i = 0; i < index; i++) {
+			if (curr != null) {
+				curr = curr.next;
+			} else {
+				return null;
+			}
+		}
+		
+		return curr;
+	}
+	
+	/**  
+	 * Remove node at input index from the list.
+	 * @param index (< length - 1, starting from 0).
+	 */
+	public boolean removeAt(int index) {
+		if (index > length) {
+			return false;
+		}
+		
+		if (index == 0) {
+			head = head.next;
+			
+		} else if (index == length - 1) {
+			tail = getNodeAt(index - 1);
+			tail.next = null;
+			
+		} else {
+			Node<TL> curr = head;
+			
+			curr = getNodeAt(index = 1);
+			curr.next = curr.next.next;
+		}
+		
+		length--;
+		return true;
+	}
+	
+	/**  
+	 * Print list in order from head to tail.
+	 */
+	public void print() {
+		Node<?> curr = head;
+		
+		while (curr != null) {
+			System.out.print(curr.value);
+			if (curr != tail) {
+				System.out.print(" -> ");
+			}
+			curr = curr.next;
+		}
+		
+		System.out.print("\n");
+	}
+
+	public static void main(String[] args){
+		SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.print();
+		list.clear();
+		list.add("3");
+		list.add("4");
+		list.add("5");
+		list.add("6");
+		list.add("7");
+		list.print();
+		System.out.print(list.removeAt(6) + "\n");
+		System.out.print(list.removeAt(3) + "\n");
+		System.out.print(list.removeAt(0) + "\n");
+		list.print();
+		
+		/**
+		 * Output:
+		 * 1 -> 2 -> 3
+		 * 3 -> 4 -> 5 -> 6 -> 7
+		 * false
+		 * true
+		 * true
+		 * 4 -> 6 -> 7
+		 */
+	}
+}
