@@ -84,14 +84,16 @@ public class DoublyLinkedList<T> {
 			head = head.next;
 			
 		} else if (index == length - 1) {
-			tail = getNodeAt(index - 1);
+			tail = tail.prev;
 			tail.next = null;
 			
 		} else {
-			Node<T> curr = head;
+			Node<T> curr = getNodeAt(index - 1);
 			
-			curr = getNodeAt(index - 1);
 			curr.next = curr.next.next;
+			if (curr.next != null) {
+				curr.next.prev = curr;
+			}
 		}
 		
 		length--;

@@ -85,9 +85,8 @@ public class SinglyLinkedList<T> {
 			tail.next = null;
 			
 		} else {
-			Node<T> curr = head;
+			Node<T> curr = getNodeAt(index - 1);
 			
-			curr = getNodeAt(index - 1);
 			curr.next = curr.next.next;
 		}
 		
