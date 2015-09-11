@@ -107,7 +107,7 @@ public class DoublyLinkedList<T> {
 		while (curr != null) {
 			System.out.print(curr.value);
 			if (curr != tail) {
-				System.out.print(" -> ");
+				System.out.print(" <-> ");
 			}
 			curr = curr.next;
 		}
