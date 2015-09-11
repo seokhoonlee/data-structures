@@ -21,7 +21,7 @@ public class Queue<T> {
 
 	/**  
 	 * Add input node to top of the stack.
-	 * @param input node (!= null).
+	 * @param input value.
 	 */
 	public void enqueue(T inputValue) {
 		Node<T> inputNode = new Node<T>(inputValue);
@@ -70,7 +70,7 @@ public class Queue<T> {
 	}
 
 	/**  
-	 * Print stack in order from top to bottom.
+	 * Print stack in order from start to end.
 	 */
 	public void print() {
 		Node<T> curr = start;

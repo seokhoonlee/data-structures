@@ -23,7 +23,7 @@ public class DoublyLinkedList<T> {
 	
 	/**  
 	 * Add input node to the list.
-	 * @param input node (!= null).
+	 * @param input value.
 	 */
 	public void add(T inputValue) {
 		Node<T> inputNode = new Node<T>(inputValue);

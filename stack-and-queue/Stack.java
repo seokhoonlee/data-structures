@@ -19,7 +19,7 @@ public class Stack<T> {
 
 	/**  
 	 * Add input node to top of the stack.
-	 * @param input node (!= null).
+	 * @param input value.
 	 */
 	public void push(T inputValue) {
 		Node<T> inputNode = new Node<T>(inputValue);
