@@ -6,8 +6,7 @@ Below are some of the well known data structures and their Java implementation. 
 
 ### Linked List
 * [Singly Linked List](https://github.com/seokhoonlee/data-structures/blob/master/linked-list/SinglyLinkedList.java)
-* [Doubly Linked List](http://google.com)
-* [Circular Linked List](http://google.com)
+* [Doubly Linked List](https://github.com/seokhoonlee/data-structures/blob/master/linked-list/DoublyLinkedList.java)
 ```
 Access: O(n) Insertion: O(1) Deletion O(1)
 ```
