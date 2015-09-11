@@ -5,7 +5,7 @@ Below are some of the well known data structures and their Java implementation. 
 ## List of data structures
 
 ### Linked List
-* [Singly Linked List](http://google.com)
+* [Singly Linked List](https://github.com/seokhoonlee/data-structures/blob/master/linked-list/SinglyLinkedList.java)
 * [Doubly Linked List](http://google.com)
 * [Circular Linked List](http://google.com)
 ```
