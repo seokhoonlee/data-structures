@@ -1,4 +1,4 @@
-# data-structures
+# Data Structures
 
 Below are some of the well known data structures and their Java implementation. Simply click on each highlighted item to view the code and explanations. 
 
