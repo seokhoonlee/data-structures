@@ -49,6 +49,7 @@ public class SinglyLinkedList<T> {
 	
 	/**  
 	 * Get element at index.
+	 * @note This is a PRIVATE function.
 	 * @param index (starting from 0).
 	 * @return node if exists, null if doesn't exist.
 	 */
@@ -68,7 +69,8 @@ public class SinglyLinkedList<T> {
 	
 	/**  
 	 * Remove node at input index from the list.
-	 * @param index (< length - 1, starting from 0).
+	 * @param index (starting from 0).
+	 * @return true if exists, false if doesn't exist.
 	 */
 	public boolean removeAt(int index) {
 		if (index > length) {
