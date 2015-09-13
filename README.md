@@ -25,7 +25,7 @@ Access: O(Log(n)) Insertion: O(Log(n)) Deletion O(Log(n))
 ```
 
 ### Binary Tree
-* [Binary Search Tree](http://google.com)
+* [Binary Search Tree](https://github.com/seokhoonlee/data-structures/blob/master/binary-tree/BinarySearchTree.java)
 * [AVL Tree](http://google.com)
 ```
 Access: O(h) Insertion: O(h) Deletion O(h), h = Log(n) if balanced
