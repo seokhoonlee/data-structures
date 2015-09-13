@@ -113,7 +113,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			maxHeight = inputNode.height;
 		}
 	}
-	
+
+	/**  
+	 * Find the node which corresponds to the input value.
+	 * @param input value.
+	 */
 	public Node<T> find(T inputValue) {
 		return traverseTo(inputValue);
 	}
