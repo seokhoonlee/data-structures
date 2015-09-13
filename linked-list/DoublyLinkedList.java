@@ -4,8 +4,8 @@ public class DoublyLinkedList<T> {
 		public Node<T> prev;
 		public Node<T> next;
 
-		public Node(T value){
-			this.value = value;
+		public Node(T inputValue){
+			this.value = inputValue;
 			this.prev = null;
 			this.next = null;
 		}

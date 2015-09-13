@@ -3,8 +3,8 @@ public class Stack<T> {
 		public T value;
 		public Node<T> down;
 
-		public Node(T value){
-			this.value = value;
+		public Node(T inputValue){
+			this.value = inputValue;
 			this.down = null;
 		}
 	}

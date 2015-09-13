@@ -3,8 +3,8 @@ public class Queue<T> {
 		public T value;
 		public Node<T> next;
 
-		public Node(T value){
-			this.value = value;
+		public Node(T inputValue){
+			this.value = inputValue;
 			this.next = null;
 		}
 	}
