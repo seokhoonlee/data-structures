@@ -21,7 +21,7 @@ Access: O(n) Insertion: O(1) Deletion O(1)
 ### Priority Queue
 * [Priority Queue (using Binary Heap)](http://google.com)
 ```
-Build O(n) Insertion: O(Log(n)) Extract Max: O(1)
+Access: O(n) Insertion: O(Log(n)) Extract Max: O(1)
 ```
 
 ### Binary Tree
