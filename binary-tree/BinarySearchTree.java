@@ -175,6 +175,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		return curr;
 	}
 	
+	/**  
+	 * Print tree in order from root to leaf.
+	 */
 	public void print() {
 		if (root == null) {
 			return;
@@ -189,7 +192,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 
 	/**  
-	 * Print tree in order from root to leaf.
+	 * Print all the nodes in the tree in that level.
+	 * @note This is a PRIVATE function.
+	 * @param input node and height of the tree that is being printed.
 	 */
 	private void printNodeAtHeight(Node<T> inputNode, int inputHeight) {
 		if (inputNode == null) {
