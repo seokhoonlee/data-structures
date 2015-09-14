@@ -19,7 +19,7 @@ Access: O(n) Insertion: O(1) Deletion: O(1)
 ```
 
 ### Priority Queue
-* [Priority Queue (using Binary Heap)]( )
+* [Priority Queue (using Binary Heap)](https://github.com/seokhoonlee/data-structures/blob/master/priority-queue/PriorityQueue.java)
 ```
 Access: O(n) Insertion: O(Log(n)) Extract Max: O(1)
 ```
