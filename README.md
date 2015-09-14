@@ -19,22 +19,22 @@ Access: O(n) Insertion: O(1) Deletion: O(1)
 ```
 
 ### Priority Queue
-* [Priority Queue (using Binary Heap)](http://google.com)
+* [Priority Queue (using Binary Heap)]( )
 ```
 Access: O(n) Insertion: O(Log(n)) Extract Max: O(1)
 ```
 
 ### Binary Tree
 * [Binary Search Tree](https://github.com/seokhoonlee/data-structures/blob/master/binary-tree/BinarySearchTree.java)
-* [AVL Tree](http://google.com)
+* [AVL Tree]( )
 ```
 Access: O(h) Insertion: O(h) Deletion: O(h), h = Log(n) if balanced
 ```
 
 ### Hash Table
-* [Linear Probing](http://google.com)
-* [Quadratic Probing](http://google.com)
-* [Double Hashing](http://google.com)
+* [Linear Probing]( )
+* [Quadratic Probing]( )
+* [Double Hashing]( )
 ```
 Access: O(1) Insertion: O(1) Deletion: O(1)
 ```
