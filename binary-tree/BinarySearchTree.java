@@ -20,8 +20,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	public Node<T> root;
-	public Node<T> smallest;
-	public Node<T> largest;
 	public int maxHeight;
 	public int size;
 
