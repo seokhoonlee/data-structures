@@ -53,6 +53,7 @@ public class AVLTree<T extends Comparable<T>> {
 			}
 
 			updateHeight(curr);
+			checkBalanced(root);
 		}
 	}
 
@@ -113,11 +114,143 @@ public class AVLTree<T extends Comparable<T>> {
 	}
 
 	/**  
-	 * Find the node which corresponds to the input value.
+	 * Get height of the input node.
+	 * @note This is a PRIVATE function.
+	 * @param input node.
+	 * @return height of node.
+	 */
+	private int getHeight(Node<T> inputNode) {
+		if (inputNode == null) {
+			return -1;
+		} else {
+			return inputNode.height;
+		}
+	}
+
+	/**  
+	 * Check if the tree is balanced, if not direct the function to rotate tree.
+	 * @note This is a PRIVATE function.
+	 * @param input node (starting node from which the check takes place).
+	 */
+	private void checkBalanced(Node<T> inputNode) {
+		int leftHeight;
+		int rightHeight;
+
+		if (inputNode == null) {
+			return;
+		} else {
+			leftHeight = getHeight(inputNode.left);
+			rightHeight = getHeight(inputNode.right);
+
+			if (leftHeight >= rightHeight + 2) {
+				inputNode = inputNode.left;
+
+				leftHeight = getHeight(inputNode.left);
+				rightHeight = getHeight(inputNode.right);
+
+				if (rightHeight >= leftHeight + 1) {
+					rotateAntiClockwise(inputNode);
+				}
+
+				rotateClockWise(inputNode.parent);
+			} else if (rightHeight >= leftHeight + 2) {
+				inputNode = inputNode.right;
+
+				leftHeight = getHeight(inputNode.left);
+				rightHeight = getHeight(inputNode.right);
+
+				if (leftHeight >= rightHeight + 1) {
+					rotateClockWise(inputNode);
+				}
+
+				rotateAntiClockwise(inputNode.parent);
+			}
+		}
+
+		checkBalanced(inputNode.left);
+		checkBalanced(inputNode.right);
+	}
+
+	/**  
+	 * Rotate the tree clockwise.
+	 * @note This is a PRIVATE function.
+	 * @param input node.
+	 */
+	private void rotateClockWise(Node<T> inputNode) {
+		Node<T> inputLeftNode = inputNode.left;
+
+		if (inputNode.parent != null) {
+			inputLeftNode.parent = inputNode.parent;
+
+			if (inputNode.parent.left == inputNode) {
+				inputNode.parent.left = inputLeftNode;
+			} else {
+				inputNode.parent.right = inputLeftNode;
+			}
+		} else {
+			inputLeftNode.parent = null;
+			root = inputLeftNode;
+		}
+
+		if (inputLeftNode.right != null) {
+			inputLeftNode.right.parent = inputNode;
+			inputNode.left = inputLeftNode.right;
+		} else {
+			inputNode.left = null;
+		}
+
+		inputLeftNode.right = inputNode;
+		inputNode.parent = inputLeftNode;
+
+		updateHeight(inputNode);
+	}
+
+	/**  
+	 * Rotate the tree anti-clockwise.
+	 * @note This is a PRIVATE function.
+	 * @param input node.
+	 */
+	private void rotateAntiClockwise(Node<T> inputNode) {
+		Node<T> inputRightNode = inputNode.right;
+
+		if (inputNode.parent != null) {
+			inputRightNode.parent = inputNode.parent;
+
+			if (inputNode.parent.right == inputNode) {
+				inputNode.parent.right = inputRightNode;
+			} else {
+				inputNode.parent.left = inputRightNode;
+			}
+		} else {
+			inputRightNode.parent = null;
+			root = inputRightNode;
+		}
+
+		if (inputRightNode.left != null) {
+			inputRightNode.left.parent = inputNode;
+			inputNode.right = inputRightNode.left;
+		} else {
+			inputNode.right = null;
+		}
+
+		inputRightNode.left = inputNode;
+		inputNode.parent = inputRightNode;
+
+		updateHeight(inputNode);
+	}
+
+	/**  
+	 * Get the node which corresponds to the input value.
 	 * @param input value.
 	 */
-	public Node<T> find(T inputValue) {
-		return traverseTo(inputValue);
+	public Node<T> getNode(T inputValue) {
+		Node<T> node = traverseTo(inputValue);
+
+		if (node.value == inputValue) {
+			return node;
+		} else {
+			return null;
+		}
 	}
 
 	/**  
@@ -125,14 +258,16 @@ public class AVLTree<T extends Comparable<T>> {
 	 * @param input value.
 	 */
 	public void remove(T inputValue) {
-		Node<T> curr = traverseTo(inputValue);
+		Node<T> curr = getNode(inputValue);
+
+		if (curr == null) {
+			return;
+		}
 
 		if (curr.left != null && curr.right != null) {
 			Node<T> successor = findSuccessor(curr);
 			remove(successor.value);
 			curr.value = successor.value;
-
-			return;
 
 		} else {
 			int compare = curr.value.compareTo(curr.parent.value);
@@ -148,6 +283,8 @@ public class AVLTree<T extends Comparable<T>> {
 				parent.right = curr.left != null ? curr.left : curr.right;
 			} 
 		}
+
+		checkBalanced(root);
 	}
 	
 	/**  
@@ -243,33 +380,34 @@ public class AVLTree<T extends Comparable<T>> {
 	public static void main(String[] args){
 		AVLTree<String> tree = new AVLTree<String>();
 	
-		tree.insert("D");
-		tree.insert("B");
 		tree.insert("A");
+		tree.insert("B");
 		tree.insert("C");
-		tree.insert("F");
+		tree.insert("D");
 		tree.insert("E");
+		tree.insert("F");
 		tree.insert("G");
 		tree.print();
 		tree.remove("D");
 		tree.print();
 		tree.remove("C");
 		tree.print();
-		System.out.print(tree.find("F").value + " ");
-		System.out.print(tree.find("F").height + "\n");
-		System.out.print(tree.find("G").value + " ");
-		System.out.print(tree.find("G").height);
+		System.out.print(tree.getNode("F").value + " ");
+		System.out.print(tree.getNode("F").height + "\n");
+		System.out.print(tree.getNode("G").value + " ");
+		System.out.print(tree.getNode("G").height);
 		
 		/**
 		 * Output:
 		 * Root
-		 * D
-		 * BF
-		 * ACEG
+		 * C
+		 * BE
+		 * A DF
+		 *       G
 		 * Root
-		 * E
+		 * C
 		 * BF
-		 * AC G
+		 * A EG
 		 * Root
 		 * E
 		 * BF
