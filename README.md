@@ -33,7 +33,7 @@ Access: O(h) Insertion: O(h) Deletion: O(h), h = Log(n) if balanced
 
 ### Hash Table
 * [Linear Probing](https://github.com/seokhoonlee/data-structures/blob/master/hash-table/LinearHashTable.java)
-* [Quadratic Probing]( )
+* [Quadratic Probing](https://github.com/seokhoonlee/data-structures/blob/master/hash-table/QuadraticHashTable.java)
 * [Double Hashing]( )
 ```
 Access: O(1) Insertion: O(1) Deletion: O(1)
