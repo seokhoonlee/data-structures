@@ -13,13 +13,14 @@ public class LinearHashTable {
 	}
 
 	public final int TABLE_SIZE = 11; // Preferably the size of Hash Table should be a prime number to avoid clustering.
+	public final int EMPTY_INDEX_KEY = -1;
 	public Entry[] array;
 
 	public LinearHashTable() {
 		array = new Entry[TABLE_SIZE];
 
 		for (int i = 0; i < TABLE_SIZE; i++) {
-			array[i] = new Entry(0, " ");
+			array[i] = new Entry(EMPTY_INDEX_KEY, " ");
 		}
 	}
 
@@ -58,7 +59,7 @@ public class LinearHashTable {
 		if (deleteEntry.value == " ") {
 			return false;
 		} else {
-			deleteEntry.key = 0;
+			deleteEntry.key = EMPTY_INDEX_KEY;
 			deleteEntry.value = " ";
 		}
 		
