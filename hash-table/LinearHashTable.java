@@ -1,3 +1,6 @@
+/**
+ *	All values of the entry has to be of string type for this hash table.
+ */
 public class LinearHashTable {
 	public static class Entry {
 		public int key;
