@@ -26,7 +26,7 @@ Access: O(n) Insertion: O(Log(n)) Extract Max: O(1)
 
 ### Binary Tree
 * [Binary Search Tree](https://github.com/seokhoonlee/data-structures/blob/master/binary-tree/BinarySearchTree.java)
-* [AVL Tree]( )
+* [AVL Tree](https://github.com/seokhoonlee/data-structures/blob/master/binary-tree/AVLTree.java)
 ```
 Access: O(h) Insertion: O(h) Deletion: O(h), h = Log(n) if balanced
 ```
