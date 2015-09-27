@@ -24,6 +24,11 @@ public class LinearHashTable {
 		}
 	}
 
+	/**  
+	 * Get entry with the specified key.
+	 * @param input key.
+	 * @return value of the entry if exists, " " if doesn't exist.
+	 */
 	public Entry get(int inputKey) {
 		int hash = (inputKey % TABLE_SIZE);
 
@@ -38,6 +43,11 @@ public class LinearHashTable {
 		return array[hash];
 	}
 
+	/**  
+	 * Put an entry to the table.
+	 * @param input key and input value.
+	 * @return true if able to put a key to the table, false if not able to do so.
+	 */
 	public boolean put(int inputKey, String inputValue) {
 		int hash = (inputKey % TABLE_SIZE);
 
@@ -53,6 +63,11 @@ public class LinearHashTable {
 		}
 	}
 	
+	/**  
+	 * Delete a specified entry from the table.
+	 * @param input key.
+	 * @return true if able to delete a key from the table, false if not able to do so.
+	 */
 	public boolean delete(int inputKey) {
 		Entry deleteEntry = get(inputKey);
 		
@@ -66,6 +81,9 @@ public class LinearHashTable {
 		return false;
 	}
 
+	/**  
+	 * Print the table starting from index 0 to TABLE_SIZE - 1.
+	 */
 	public void print() {
 		for (int i = 0; i < TABLE_SIZE; i++) {
 			System.out.print("|");
